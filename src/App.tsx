@@ -1,12 +1,12 @@
-import Todo from "./features/todo/Todo";
+import { QueryClientProvider, QueryClient } from "react-query";
+import Users from "./features/user/Users";
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Todo />
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Users />
+    </QueryClientProvider>
   );
 };
 
